@@ -2297,70 +2297,7 @@ button:focus-visible {
         grid-template-columns: 1fr;
     }
 
-}/* =========================================================
-   STEP 5C — POLL PERCENTAGE BARS
-   ========================================================= */
-
+}
 .poll-preview {
-    margin-top: 28px;
-    padding-top: 24px;
-    border-top: 1px solid #e1e5e6;
-}
-
-.poll-preview-label {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 0.72rem;
-    font-weight: 800;
-    letter-spacing: 0.12em;
-    color: #5d91a3;
-}
-
-.poll-preview-note {
-    margin: 6px 0 22px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 0.85rem;
-    line-height: 1.6;
-    color: #718086;
-}
-
-.poll-row {
-    margin-bottom: 18px;
-}
-
-.poll-row:last-child {
-    margin-bottom: 0;
-}
-
-.poll-row-top {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    margin-bottom: 7px;
-
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 0.9rem;
-}
-
-.poll-row-top strong {
-    color: #34434a;
-}
-
-.poll-track {
-    width: 100%;
-    height: 12px;
-
-    overflow: hidden;
-
-    background: #edf1f2;
-    border-radius: 999px;
-}
-
-.poll-fill {
-    height: 100%;
-
-    background: #79b6c9;
-    border-radius: 999px;
-
-    transition: width 0.5s ease;
+    display: none;
 }

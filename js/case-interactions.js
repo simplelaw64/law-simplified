@@ -1,75 +1,69 @@
 /* =========================================================
-   LAW SIMPLIFIED — UNIVERSAL CASE POLL
-   Works across every case study
+   LAW SIMPLIFIED — WHAT WOULD YOU DECIDE?
    ========================================================= */
 
-const poll = document.querySelector(".you-decide");
+const decisionSections = document.querySelectorAll(".you-decide");
 
-if (poll) {
+decisionSections.forEach((section) => {
 
-    const decisionButtons =
-        poll.querySelectorAll(".decision-button");
-
-    const decisionResult =
-        poll.querySelector(".decision-result");
+    const buttons = section.querySelectorAll(".decision-button");
+    const result = section.querySelector(".decision-result");
 
     const resultTitle =
-        poll.querySelector(".decision-result-title");
+        section.querySelector(".decision-result-title");
 
     const resultText =
-        poll.querySelector(".decision-result-text");
+        section.querySelector(".decision-result-text");
 
     const correctAnswer =
-        poll.dataset.correct;
+        section.dataset.correct;
 
 
-    decisionButtons.forEach((button) => {
+    buttons.forEach((button) => {
 
         button.addEventListener("click", () => {
 
-            /* Remove old selection */
+            const answer =
+                button.dataset.answer;
 
-            decisionButtons.forEach((option) => {
-                option.classList.remove("selected");
+
+            /* Remove previous selection */
+
+            buttons.forEach((btn) => {
+                btn.classList.remove("selected");
             });
 
 
-            /* Highlight selected option */
+            /* Highlight chosen answer */
 
             button.classList.add("selected");
 
 
-            /* Get reader's answer */
-
-            const answer = button.dataset.answer;
-
-
-            /* Compare with actual court decision */
+            /* Show the result */
 
             if (answer === correctAnswer) {
 
                 resultTitle.textContent =
-                    poll.dataset.agreeTitle;
+                    section.dataset.agreeTitle;
 
                 resultText.textContent =
-                    poll.dataset.agreeText;
+                    section.dataset.agreeText;
 
             } else {
 
                 resultTitle.textContent =
-                    poll.dataset.disagreeTitle;
+                    section.dataset.disagreeTitle;
 
                 resultText.textContent =
-                    poll.dataset.disagreeText;
+                    section.dataset.disagreeText;
+
             }
 
 
-            /* Show result */
-
-            decisionResult.classList.add("show");
+            result.classList.add("show");
 
         });
 
     });
 
-}
+});
